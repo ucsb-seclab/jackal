@@ -33,6 +33,7 @@ The `WEB3_RPC_ENDPOINT` parameter is a URL to a JSON-RPC Web3 endpoint. If you a
 The identification of controllable `CALL`(s) in a smart contract binary is done with the script [run.py](https://github.com/ucsb-seclab/jackal/blob/master/CheckConfusedContracts/run.py) in `CheckConfusedContracts`. e.g.,:
 
 ```bash
+$ cd jackal/CheckConfusedContracts
 $ python run.py --ca 0x204Db9Ca00912c0F9e6380342113f6A0147E6f8C --block 16380000 
 ```
 
