@@ -14,7 +14,7 @@ For different technical and ethical reasons, here we are not releasing a fully a
 
 # ⚡️ Setup
 
-Just clone the repo and run the setup.sh script:
+Just clone the repo and run the `setup.sh` script:
 
 ```bash
 git clone https://github.com/ucsb-seclab/jackal.git && ./setup.sh <WEB3_RPC_ENDPOINT>
@@ -22,13 +22,15 @@ git clone https://github.com/ucsb-seclab/jackal.git && ./setup.sh <WEB3_RPC_ENDP
 
 This script will install [ethpwn](https://github.com/ethpwn/ethpwn) (the Swiss Army Knife for Smart Contracts Hacking) and [greed](https://github.com/ucsb-seclab/greed), our symbolic execution engine for EVM smart contracts. 
 
-The `WEB3_RPC_ENDPOINT` parameter is a URL to aJSON-RPC web3 endpoint. If you are running a private node this can be, e.g., `http://0.0.0.0:8545`. Otherwise, you can use services like [Infura](https://www.infura.io/) or [Alchemy](https://www.alchemy.com/) to obtain access to their API (there is a free-tier which is more than enough for using our tool).
+The `WEB3_RPC_ENDPOINT` parameter is a URL to a JSON-RPC Web3 endpoint. If you are running a private node this can be, e.g., `http://0.0.0.0:8545`. Otherwise, you can use services like [Infura](https://www.infura.io/) or [Alchemy](https://www.alchemy.com/) to obtain access to their API (there is a free-tier which is more than enough for using our tool).
 
 
 
 # 🚀 Usage
 
-The identification of controllable `CALL` in a smart contract binary is done with the script [run.py](https://github.com/ucsb-seclab/jackal/blob/master/CheckConfusedContracts/run.py) in `CheckConfusedContracts`. e.g.,:
+## `CALL` Inspector
+
+The identification of controllable `CALL`(s) in a smart contract binary is done with the script [run.py](https://github.com/ucsb-seclab/jackal/blob/master/CheckConfusedContracts/run.py) in `CheckConfusedContracts`. e.g.,:
 
 ```bash
 python run.py --ca 0x204Db9Ca00912c0F9e6380342113f6A0147E6f8C --block 16380000 
@@ -36,3 +38,12 @@ python run.py --ca 0x204Db9Ca00912c0F9e6380342113f6A0147E6f8C --block 16380000
 
 `0x204Db9Ca00912c0F9e6380342113f6A0147E6f8C` is the address of the contract you want to analyze, while `16380000` is the block (height) that is gonna be used as a reference for this analysis (i.e., storage variables).
 If a controllable `CALL` is detected the script will report a True positive by highlighting the log with a green color.
+
+
+## Generic Checker
+
+
+## Token Checker
+
+
+## Automatic Exploit Generation
