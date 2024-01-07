@@ -10,7 +10,8 @@ WORKDIR = "../Analyses/"
 # 30 minutes for taint analysis
 TIMEOUT_TAINT_ANALYSIS = 60 * 2
 
-GIGAHORSE_ANALYSIS_SCRIPT = "/home/degrigis/projects/greed/resources/analyze_hex.sh"
+# This script is exported by greed during the installation
+GIGAHORSE_ANALYSIS_SCRIPT = "analyze_hex.sh"
 GIGAHORSE_TIMEOUT = "20m"
 GIGAHORSE_FAILS = "./gigahorse_fails.txt"
 

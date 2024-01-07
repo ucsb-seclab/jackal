@@ -25,7 +25,6 @@ def analyze_call_from_ep(project, worker_folder, contract_addr, entry_point, cal
     
     p = project
 
-    # Some state options
     options.GREEDY_SHA = True
     options.LAZY_SOLVES = False
     options.STATE_INSPECT = False

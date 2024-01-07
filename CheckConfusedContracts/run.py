@@ -204,6 +204,12 @@ if __name__ == '__main__':
         log.info(f" [!]{contract_addr} Gigahorse failed")
         sys.exit(0)
 
+    # Some state options
+    if os.environ.get('WEB3_PROVIDER', None):
+        options.WEB3_PROVIDER = os.environ['WEB3_PROVIDER']
+    else:
+        options.WEB3_PROVIDER = 'http://127.0.0.1:8545'
+
     # Let's create the greed project
     try:
         project = Project(target_dir=target_dir)
