@@ -12,4 +12,30 @@ Our system, `Jackal`, can be used to find exploitable confused deputy vulnerabil
 
 For different technical and ethical reasons, here we are not releasing a fully automated "push-one-button" solution for the identification and automatic exploitation of smart contracts. Rather, we open-sourced all the necessary scripts to demonstrate the analyses presented in the paper. Interested researchers will have all the necessary code to replicate our work. In case something does not click, please reach out to us :)
 
-# Installation
+# Setup
+
+First, you will need to install [ethpwn](https://github.com/ethpwn/ethpwn) (the Swiss Army Knife for Smart Contracts Hacking) and [greed](https://github.com/ucsb-seclab/greed): our symbolic execution engine for EVM smart contracts. To do this, follow the instructions in the respective repos.
+ Here a TL;DR:
+
+```bash
+# Clone and install ethpwn, make sure your pip version is >= 23.1.2
+git clone git@github.com:ethpwn/ethpwn.git && cd ./ethpwn && pip install -e .
+
+# Clone and install greed
+git clone git@github.com:ucsb-seclab/greed.git
+# Create a virtual environment (e.g., using virtualenvwrapper)
+mkvirtualenv greed
+# Activate the virtual environment
+workon greed
+# Install greed (will setup gigahorse, yices, and `pip install -e greed`)
+cd greed
+./setup.sh
+```
+
+After that, you are ready to clone and use `Jackal`!
+
+```bash
+git clone https://github.com/ucsb-seclab/jackal.git
+```
+
+# Usage
