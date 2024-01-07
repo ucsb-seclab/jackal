@@ -17,7 +17,7 @@ For different technical and ethical reasons, here we are not releasing a fully a
 Just clone the repo and run the `setup.sh` script:
 
 ```bash
-git clone https://github.com/ucsb-seclab/jackal.git && ./setup.sh <WEB3_RPC_ENDPOINT>
+$ git clone https://github.com/ucsb-seclab/jackal.git && ./setup.sh <WEB3_RPC_ENDPOINT>
 ```
 
 This script will install [ethpwn](https://github.com/ethpwn/ethpwn) (the Swiss Army Knife for Smart Contracts Hacking) and [greed](https://github.com/ucsb-seclab/greed), our symbolic execution engine for EVM smart contracts. 
@@ -33,7 +33,7 @@ The `WEB3_RPC_ENDPOINT` parameter is a URL to a JSON-RPC Web3 endpoint. If you a
 The identification of controllable `CALL`(s) in a smart contract binary is done with the script [run.py](https://github.com/ucsb-seclab/jackal/blob/master/CheckConfusedContracts/run.py) in `CheckConfusedContracts`. e.g.,:
 
 ```bash
-python run.py --ca 0x204Db9Ca00912c0F9e6380342113f6A0147E6f8C --block 16380000 
+$ python run.py --ca 0x204Db9Ca00912c0F9e6380342113f6A0147E6f8C --block 16380000 
 ```
 
 `0x204Db9Ca00912c0F9e6380342113f6A0147E6f8C` is the address of the contract you want to analyze, while `16380000` is the block (height) that is gonna be used as a reference for this analysis (i.e., storage variables).
@@ -42,6 +42,12 @@ If a controllable `CALL` is detected the script will report a True positive by h
 
 ## Generic Checker
 
+This script is used to find possible targets for an end-to-end exploitation of a confused deputy vulnerability. Please read the note in the [generic_checker.py](https://github.com/ucsb-seclab/jackal/blob/master/FindContractTargets/GenericChecker/generic_checker.py) for more information. Usage:
+
+```bash
+$ cd jackal/FindContractTargets/GenericChecker
+$ python generic_checker.py --confused 0x11b815efb8f581194ae79006d24e0d814b7697f6 --target 0xdAC17F958D2ee523a2206206994597C13D831ec7 --tx 0x15bef4b45379ad3dfa676f206c1ce0d9d4a18164d82a0d1a71737652c9456212 --func 0xa9059cbb
+```
 
 ## Token Checker
 
