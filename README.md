@@ -43,7 +43,7 @@ If a controllable `CALL` is detected the script will report a True positive by h
 
 ## Generic Checker
 
-This script is used to find possible targets for an end-to-end exploitation of a confused deputy vulnerability. Please read the note in the [generic_checker.py](https://github.com/ucsb-seclab/jackal/blob/master/FindContractTargets/GenericChecker/generic_checker.py) for more information. Usage:
+This script is used to find possible "generic" targets (see Section 4.3 in the paper) for an end-to-end exploitation of a confused deputy vulnerability. Please read the note in the [generic_checker.py](https://github.com/ucsb-seclab/jackal/blob/master/FindContractTargets/GenericChecker/generic_checker.py) for more information. Usage:
 
 ```bash
 $ cd jackal/FindContractTargets/GenericChecker
@@ -51,6 +51,19 @@ $ python generic_checker.py --confused 0x11b815efb8f581194ae79006d24e0d814b7697f
 ```
 
 ## Token Checker
+This script is used to find possible ERC20 targets (see Section 4.3 in the paper) for an end-to-end exploitation of a confused deputy vulnerability. Please read the note in the [tokens_checker.py](https://github.com/ucsb-seclab/jackal/blob/master/FindContractTargets/TokenChecker/tokens_checker.py.py) for more information. Usage:
 
+```bash
+$ cd jackal/FindContractTargets/TokenChecker
+$ python tokens_checker.py --ca 0x2057CfB9fD11837D61B294D514C5bd03e5E7189A --block-start 14104827
+```
 
 ## Automatic Exploit Generation
+
+Finally, this script implement the (A)utomatic (E)xploit (G)eneration algorithm described in Section 4.4 of the paper. Specifically, this script automatically synthetize the necessary `CALLDATA` to (1) force a confused contract to call a `transfer` function in an ERC20 contract of choice, and (2) gracefully terminate the execution to complete the exploit.
+Please read the note in the [aeg.py](https://github.com/ucsb-seclab/jackal/blob/master/ERC20AutomaticExploitGeneration/aeg.py) script for further information. Usage:
+
+```bash
+$ cd jackal/ERC20AutomaticExploitGeneration
+$ python aeg.py 0xeC55Bf7E10b6594874554BAd1B461214Cab413d4 --aa_call_id 0x9f7 --contract_target 0x6B175474E89094C44Da98b954EedeAC495271d0F --function_target_sig 0xa9059cbb --block 11469710 --entry_point 0xcbd8c06a
+```
