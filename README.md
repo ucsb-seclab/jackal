@@ -17,12 +17,12 @@ For different technical and ethical reasons, here we are not releasing a fully a
 Just clone the repo and run the `setup.sh` script:
 
 ```bash
-$ git clone https://github.com/ucsb-seclab/jackal.git && ./setup.sh <WEB3_RPC_ENDPOINT>
+$ git clone https://github.com/ucsb-seclab/jackal.git && source ./setup.sh
 ```
 
-This script will install [ethpwn](https://github.com/ethpwn/ethpwn) (the Swiss Army Knife for Smart Contracts Hacking) and [greed](https://github.com/ucsb-seclab/greed), our symbolic execution engine for EVM smart contracts. 
+This will install [ethpwn](https://github.com/ethpwn/ethpwn) (the Swiss Army Knife for Smart Contracts Hacking) and [greed](https://github.com/ucsb-seclab/greed), our symbolic execution engine for EVM smart contracts. 
 
-The `WEB3_RPC_ENDPOINT` parameter is a URL to a JSON-RPC Web3 endpoint. If you are running a private node this can be, e.g., `http://0.0.0.0:8545`. Otherwise, you can use services like [Infura](https://www.infura.io/) or [Alchemy](https://www.alchemy.com/) to obtain access to their API (there is a free-tier which is more than enough for using our tool).
+The script will ask for a `WEB3_RPC_ENDPOINT` URL to a JSON-RPC Web3 endpoint. If you are running a private node this can be, e.g., `http://0.0.0.0:8545`. Otherwise, you can use services like [Infura](https://www.infura.io/) or [Alchemy](https://www.alchemy.com/) to obtain access to their API (there is a free-tier which is more than enough for using our tool).
 
 
 
