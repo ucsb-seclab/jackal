@@ -3,7 +3,7 @@
 # set -x
 
 # CURRENT-WORKDIR: jackal
-read -p "Press continue if you are in a python virtuale env: " ANSWER
+read -p "Press continue if you are in a python virtual env: " ANSWER
 
 apt-get update 
 apt-get install -y htop tmux git vim nano\ 
@@ -13,7 +13,7 @@ apt-get install -y htop tmux git vim nano\
                    libsqlite3-dev mcpp libboost-all-dev time
 
 # get the WEB3_PROVIDER url from user
-read -p "Enter WEB3_PROVIDER url: " WEB3_PROVIDER
+read -p "Enter WEB3_PROVIDER url: " W3_PROVIDER
 
 git clone https://github.com/ethpwn/ethpwn.git
 cd ethpwn && pip install -e .
@@ -24,7 +24,7 @@ rm ~/.config/ethpwn/config.json
 echo "{
   \"default_network\": \"mainnet\",
   \"default_node_urls\": {
-    \"mainnet\": \"$WEB3_PROVIDER\",
+    \"mainnet\": \"$W3_PROVIDER\",
   },
 }" > ~/.config/ethpwn/config.json
 
@@ -37,6 +37,6 @@ git checkout fae1812180ff2ffe4b0a789f84071988b0917745 # release 1.0.0
 echo "OK" | ./setup.sh
 
 # export the WEB3_PROVIDER as environment variable
-export WEB3_PROVIDER=$WEB3_PROVIDER
+export WEB3_PROVIDER=$W3_PROVIDER
 
 echo "DONE!"
