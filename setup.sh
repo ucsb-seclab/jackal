@@ -15,6 +15,9 @@ apt-get install -y htop tmux git vim nano\
 # get the WEB3_PROVIDER url from user
 read -p "Enter WEB3_PROVIDER url: " W3_PROVIDER
 
+# export the WEB3_PROVIDER as environment variable
+export WEB3_PROVIDER=$W3_PROVIDER
+
 git clone https://github.com/ethpwn/ethpwn.git
 cd ethpwn && pip install -e .
 ethpwn wallet create
@@ -30,13 +33,10 @@ echo "{
 
 
 # back to jackal folder
-cd ..
+cd ..se
 git clone https://github.com/ucsb-seclab/greed.git
 cd greed
 git checkout fae1812180ff2ffe4b0a789f84071988b0917745 # release 1.0.0
 echo "OK" | ./setup.sh
-
-# export the WEB3_PROVIDER as environment variable
-export WEB3_PROVIDER=$W3_PROVIDER
 
 echo "DONE!"
