@@ -10,7 +10,7 @@ Our system, `Jackal`, can be used to find exploitable confused deputy vulnerabil
 
 # ⚠️ Disclaimer 
 
-For different technical and ethical reasons, here we are not releasing a fully automated "push-one-button" solution for the identification and automatic exploitation of smart contracts. Rather, we open-sourced all the necessary scripts to demonstrate the analyses presented in the paper. Interested researchers will have all the necessary code to replicate our work. In case something does not click, please reach out to us :)
+For different technical and ethical reasons, we are not releasing a fully automated "push-one-button" solution for the identification and automatic exploitation of smart contracts. Rather, we open-sourced all the necessary scripts to demonstrate the analyses presented in the paper. Interested researchers will have all the necessary code to replicate our work. In case something does not click, please reach out to us :)
 
 # ⚡️ Setup
 
