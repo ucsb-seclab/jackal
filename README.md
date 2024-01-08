@@ -37,7 +37,7 @@ $ cd jackal/CheckConfusedContracts
 $ python run.py --ca 0x204Db9Ca00912c0F9e6380342113f6A0147E6f8C --block 16380000 
 ```
 
-`0x204Db9Ca00912c0F9e6380342113f6A0147E6f8C` is the address of the contract you want to analyze, while `16380000` is the block (height) that is gonna be used as a reference for this analysis (i.e., storage variables).
+`0x204Db9Ca00912c0F9e6380342113f6A0147E6f8C` is the address of the contract you want to analyze, while `16380000` is the block (height) that is gonna be used as a reference for this analysis.
 If a controllable `CALL` is detected the script will report a True positive by highlighting the log with a green color.
 
 
