@@ -50,6 +50,9 @@ $ cd jackal/FindContractTargets/GenericChecker
 $ python generic_checker.py --confused 0x11b815efb8f581194ae79006d24e0d814b7697f6 --target 0xdAC17F958D2ee523a2206206994597C13D831ec7 --tx 0x15bef4b45379ad3dfa676f206c1ce0d9d4a18164d82a0d1a71737652c9456212 --func 0xa9059cbb
 ```
 
+> **⚠️ Warning**:  The generic checker requires access to raw geth's API (e.g., `eth_getRawTransactionByBlockNumberAndIndex`) that are *not* available with an Infura/Alchemy Web3 endpoint. To test this script, you will need a private archive node).
+
+
 ## Token Checker
 This script is used to find possible ERC20 targets (see Section 4.3 in the paper) for an end-to-end exploitation of a confused deputy vulnerability. Please read the note in the [tokens_checker.py](https://github.com/ucsb-seclab/jackal/blob/master/FindContractTargets/TokenChecker/tokens_checker.py.py) for more information. Usage:
 
