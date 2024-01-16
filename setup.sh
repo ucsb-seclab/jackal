@@ -6,11 +6,7 @@
 read -p "Press continue if you are in a python virtual env: " ANSWER
 
 apt-get update 
-apt-get install -y htop tmux git vim nano\ 
-                   wget cmake python3-pip wget\
-                   graphviz libgraphviz-dev libffi-dev python3.11-dev python3.11\
-                   gperf libgmp-dev mkisofs bison clang doxygen flex libncurses5-dev\ 
-                   libsqlite3-dev mcpp libboost-all-dev time
+apt-get install -y htop tmux git vim nano wget cmake python3-pip wget graphviz libgraphviz-dev libffi-dev python3.11-dev python3.11 gperf libgmp-dev mkisofs bison clang doxygen flex libncurses5-dev libsqlite3-dev mcpp libboost-all-dev time
 
 # get the WEB3_PROVIDER url from user
 read -p "Enter WEB3_PROVIDER url: " W3_PROVIDER
