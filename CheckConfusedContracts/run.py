@@ -255,6 +255,6 @@ if __name__ == '__main__':
         if call_report['classification'] == 'AA' and call_report['verified'] == True:
             print(f'{bcolors.OKGREEN}{call_report}{bcolors.ENDC}')
         elif call_report['classification'] == 'AA' and call_report['verified'] == False:
-            print(f'{bcolors.RED}{call_report}{bcolors.ENDC}')
+            print(f'{bcolors.FAIL}{call_report}{bcolors.FAIL}')
         else:
             print(call_report)
