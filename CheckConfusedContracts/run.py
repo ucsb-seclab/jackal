@@ -146,28 +146,6 @@ def load_csv(path: str, seperator: str='\t'):
 def load_csv_map(path: str, seperator: str='\t', reverse: bool=False):
     return {y: x for x, y in load_csv(path, seperator)} if reverse else {x: y for x, y in load_csv(path, seperator)}
 
-def verify_confused_contract(deputy, calldata, call_tac_id, block):
-    # Key: tac_id, value: original_pc
-    TAC_TO_PC = load_csv_map(WORKDIR + f"/{deputy[0:5]}/{deputy}/TAC_Statement_OriginalStatement.csv")
-
-    # res[1] is the calldata associated to the True positive
-    cmd_check_tp = CMD_CHECK_TP.format(deputy, calldata, hex(int(TAC_TO_PC[call_tac_id],16)+1), block)
-
-    # Start the py-evm script with subprocess and grab the output
-    p = subprocess.Popen(cmd_check_tp, stdout=subprocess.PIPE, shell=True)
-
-    # grab the output
-    (output, err) = p.communicate()
-
-    pyevm_res = output.strip().decode('utf-8')
-
-    if pyevm_res == 'True':
-        return True
-    else:
-        print("AA_CALL cannot be verified by py-evm :(")
-        return False
-
-
 #
 # This script will implement the symbolic analysis as explained in Section 4.1 and 4.2 of the paper
 # https://www.usenix.org/conference/usenixsecurity23/presentation/gritti.
@@ -248,7 +226,7 @@ if __name__ == '__main__':
                         call_report['verified'] = True
                     else:
                         call_report['verified'] = False
-
+                call_report['call_tac_id'] = call.id
                 call_reports.append(call_report)
 
     for call_report in call_reports:
