@@ -158,7 +158,7 @@ def load_csv_map(path: str, seperator: str='\t', reverse: bool=False):
 # report it, but its color is gonna be RED (this is a potential False positive).
 #
 # e.g.:
-#    python run.py --ca 0x204Db9Ca00912c0F9e6380342113f6A0147E6f8C --block 16380000
+#    python run.py --ca <CHECKSUMMED_CONTRACT_ADDRESS> --block <BLOCK_NUMBER>
 #
 if __name__ == '__main__':
 
