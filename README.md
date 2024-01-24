@@ -8,9 +8,11 @@
 This repository contains the code used for our USENIX paper <a href="https://sites.cs.ucsb.edu/~vigna/publications/2023_USENIX_Confusum.pdf">Confusum Contractum: Confused Deputy Vulnerabilities in Ethereum Smart Contracts</a>.
 Our system, `Jackal`, can be used to find exploitable confused deputy vulnerabilities on the Ethereum blockchain.
 
-# ⚠️ Disclaimer 
+# ⚠️ Disclaimers
 
-For different technical and ethical reasons, we are not releasing a fully automated "push-one-button" solution for the identification and automatic exploitation of smart contracts. Rather, we open-sourced all the necessary scripts to demonstrate the analyses presented in the paper. Interested researchers will have all the necessary code to replicate our work. In case something does not click, please reach out to us :)
+- For different technical and ethical reasons, we are not releasing a fully automated "push-one-button" solution for the identification and automatic exploitation of smart contracts. Rather, we open-sourced all the necessary scripts to demonstrate the analyses presented in the paper. Interested researchers will have all the necessary code to replicate our work. In case something does not click, please reach out to us :)
+  
+- ALL the high-profile vulnerable contracts discovered with `Jackal` have been already reported to the [CISA](https://www.cisa.gov/). The rest of the contracts do not hold any digital currency at the time of writing. That bein said, we take an extra precautionary step and avoid sharing the list of vulnerable addresses publicly. If this is important for your research please reach out to us with a valid academic endorsement and we can share the dataset.
 
 # ⚡️ Setup
 
