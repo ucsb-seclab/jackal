@@ -54,7 +54,7 @@ We automatically discard whatever is less than 100$ value.
 The value of the tokens are checked at the time of the transfer (querying uniswap and sushiswap)
 
 e.g., 
-   python tokens_checker.py --ca 0x2057CfB9fD11837D61B294D514C5bd03e5E7189A --block-start 14104827
+   python tokens_checker.py --ca <CONFUSED_CONTRACT_CHECSUMMED_ADDRESS> --block-start <BLOCK_NUMBER>
 '''
 if __name__ == '__main__':
 
