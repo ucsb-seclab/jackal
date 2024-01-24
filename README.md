@@ -14,6 +14,8 @@ Our system, `Jackal`, can be used to find exploitable confused deputy vulnerabil
   
 - ALL the high-profile vulnerable contracts discovered with `Jackal` have already been reported to the [CISA](https://www.cisa.gov/). The rest of the contracts do not hold any digital currency at the time of writing. That being said, we take an extra precautionary step and avoid sharing the list of vulnerable addresses publicly. If this is important for your research please reach out to us with a valid academic endorsement and we can share the dataset.
 
+- It is YOUR responsibility to report any new vulnerability discovered using our methodology/new methodologies based on `Jackal`.
+  
 # ⚡️ Setup
 
 Just clone the repo and run the `setup.sh` script:
