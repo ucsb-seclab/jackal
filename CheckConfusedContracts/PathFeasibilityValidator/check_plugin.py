@@ -4,11 +4,7 @@ from ethpwn.ethlib.evm.plugins.utils import *
 
 from typing import NamedTuple
 
-'''
-NOTE: Whenever we see a CALLER executed by the candidate_target and the value
-would be the confused_contract (i.e., the confused contract is calling the target),
-we change it to a random address, collect the SSTOREs in the candidate_target and terminate.
-'''
+
 class CheckPlugin(BaseAnalysisPlugin):
 
     name = "jackal_pfv_checker"
