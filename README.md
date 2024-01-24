@@ -35,7 +35,7 @@ The identification of controllable `CALL`(s) in a smart contract binary is done 
 
 ```bash
 $ cd jackal/CheckConfusedContracts
-$ python run.py --ca 0x204Db9Ca00912c0F9e6380342113f6A0147E6f8C --block 16380000 
+$ python run.py --ca <CONTRACT_ADDR_CHECKSUMMED> --block 16380000 
 ```
 
 `0x204Db9Ca00912c0F9e6380342113f6A0147E6f8C` is the address of the contract you want to analyze, while `16380000` is the block (height) that is gonna be used as a reference for this analysis.
@@ -48,7 +48,7 @@ This script is used to find possible "generic" targets (see Section 4.3 in the p
 
 ```bash
 $ cd jackal/FindContractTargets/GenericChecker
-$ python generic_checker.py --confused 0x11b815efb8f581194ae79006d24e0d814b7697f6 --target 0xdAC17F958D2ee523a2206206994597C13D831ec7 --tx 0x15bef4b45379ad3dfa676f206c1ce0d9d4a18164d82a0d1a71737652c9456212 --func 0xa9059cbb
+$ python generic_checker.py --confused <CONFUSED_CONTRACT_ADDR_CHECKSUMMED> --target 0xdAC17F958D2ee523a2206206994597C13D831ec7 --tx 0x15bef4b45379ad3dfa676f206c1ce0d9d4a18164d82a0d1a71737652c9456212 --func 0xa9059cbb
 ```
 
 ## Token Checker
@@ -56,7 +56,7 @@ This script is used to find possible ERC20 targets (see Section 4.3 in the paper
 
 ```bash
 $ cd jackal/FindContractTargets/TokenChecker
-$ python tokens_checker.py --ca 0x2057CfB9fD11837D61B294D514C5bd03e5E7189A --block-start 14104827
+$ python tokens_checker.py --ca <CONFUSED_CONTRACT_ADDR_CHECKSUMMED> --block-start 14104827
 ```
 
 ## Automatic Exploit Generation
@@ -66,7 +66,7 @@ Please read the note in the [aeg.py](https://github.com/ucsb-seclab/jackal/blob/
 
 ```bash
 $ cd jackal/ERC20AutomaticExploitGeneration
-$ python aeg.py 0xeC55Bf7E10b6594874554BAd1B461214Cab413d4 --aa_call_id 0x9f7 --contract_target 0x6B175474E89094C44Da98b954EedeAC495271d0F --function_target_sig 0xa9059cbb --block 11469710 --entry_point 0xcbd8c06a
+$ python aeg.py <CONFUSED_CONTRACT_ADDR_CHECKSUMMED> --aa_call_id 0x9f7 --contract_target 0x6B175474E89094C44Da98b954EedeAC495271d0F --function_target_sig 0xa9059cbb --block 11469710 --entry_point 0xcbd8c06a
 ```
 
 
